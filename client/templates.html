@@ -1,0 +1,180 @@
+
+<head>
+</head>
+<body>
+</body>
+<!--title and buttons-->
+<template name="title">
+	<h1 id="bubble1">Welcome to Bubbles, a Chatroom Service for Everyone!</h1>
+</template>
+<template name="login">
+	<div class ="coolstuff">
+    		{{> loginButtons}}
+
+	</div>
+</template>
+<template name="database">
+<ul>
+	{{#each tasks}}
+	<li>
+	{{text}}
+	</li>
+	{{/each}}
+</ul>
+</template>
+
+
+<!--Templates that state information about the application-->
+
+
+<template name ="HowItWorks">
+<div class ="coolstuff">
+<img src="http://i.imgur.com/WUtDJqK.png" alt="Bubbles">
+	<p class="info"> Bubbles pairs up people together based on similar interests without having to scour the web looking for a forever discord link or waiting to not get paired up with a bot or a horndog on omegle. You start with two choices. You can either pick directly from groups you want to join or you can take a test which will pair you up with the best group. Bubbles aren't just interest groups, but communities. The principle of bubbles is to feel welcome. Have Fun! :)</p>
+</div>
+
+
+</template>
+<template name="Info">
+<div class ="coolstuff">
+<img src="http://i.imgur.com/WUtDJqK.png" alt="Bubbles">
+	<p class="info"> Bubbles is a web app designed for people who spend the majority of their time online to easily experience relationships. Bubbles use similar interests to match people into group chats while providing easy links to hanging out online and easily creating events.  </p>
+	<ul>
+		<p>Bubbles takes inspiration from</p>
+		<li>
+			<a href="https://discordapp.com/">Discord</a>
+			
+		</li>
+		<li>
+			<a href="https://www.teamspeak.com/">TeamSpeak</a>
+		</li>
+	</ul>
+</div>
+</template>
+
+<!--Templates that deal with the chat-->
+
+
+<template name="Chats">
+	<div id="Chatbox">
+		<div id="ChatsShown">
+			<button class="chatrooms" onclick="Name_Data(BGText),document.getElementById('Current_Chatroom').innerHTML = 'Board Game',Toggle_Data('B')">Board Games</button>
+			<button id="Anime" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Anime', Name_Data(AnimeText),Toggle_Data('A')">Anime</button>
+			<button id="Cartoons" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Cartoons', Name_Data(CartoonText),Toggle_Data('C')">Cartoons</button>
+			<button id="Drawing" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Drawing', Name_Data(DrawText),Toggle_Data('Dr')">Drawing</button>
+			<button id="FPS" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'FPS', Name_Data(FPSText),Toggle_Data('F')">FPS</button>
+			<button id="Fight" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Fighting Games', Name_Data(FightText),Toggle_Data('Fi')">Fighting Games</button>
+			<button id="GD" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Game Dev', Name_Data(GDText),Toggle_Data('G')">Game Dev</button>
+			<button id="Hiking" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Hiking',Name_Data(HikeText),Toggle_Data('H')">Hiking</button>
+			<button id="Lit" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Literature', Name_Data(LitText), Toggle_Data('l')">Literature</button>
+			<button id="MOBA" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'MOBA', Name_Data(MOBAText),Toggle_Data('M')">MOBA</button>
+			<button id="RTS" class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'RTS', Name_Data(RTSText),Toggle_Data('R')">RTS</button>
+			<button id="Sports " class="chatrooms" onclick="document.getElementById('Current_Chatroom').innerHTML = 'Sports', Name_Data(SportsText),Toggle_Data('S')">Sports</button>
+
+		</div>
+	<ul class="text-section LitTasks">
+		<div id="LitTask" class="HiddenTask">
+		{{#each LitTasks}}
+			<p class="text">
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="AnimeTask" class="HiddenTask">
+		{{#each AnimeTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="CartoonTask" class="HiddenTask">
+		{{#each CartoonTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="FPSTask" class="HiddenTask">
+		{{#each FPSTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="RTSTask" class="HiddenTask">
+		{{#each RTSTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="BGTask" class="HiddenTask">
+		{{#each BGTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="GDTask" class="HiddenTask">
+		{{#each GDTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="MOBATask" class="HiddenTask">
+		{{#each MOBATasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="FightTask" class="HiddenTask">
+		{{#each FightTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="DrawTask" class="HiddenTask">
+		{{#each DrawTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="SportsTask" class="HiddenTask">
+		{{#each SportsTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+		<div id="HikeTask" class="HiddenTask">
+		{{#each HikeTasks}}
+			<p class="text" >
+			{{text}}
+			</p>
+		{{/each}}
+		</div>
+	</ul>
+ 		<div>
+			<p id="Current_Chatroom" onchange="Meteor.call('Update_Data', this.value)">Error</p> 
+			<button class="smallbutton" onclick="Insert_Data()">submit</button>
+	  			<input type="text" id="ChatInput" name="ChatInput">
+ 		</div>
+
+			<li><button class="clickChangesPage" data-page='login'>logout</button></li> 
+	</div>
+</template>
+<template name="Test1">
+	<p id="q">Click to button to see if you haven't taken the test yet</p>
+	<input type="text" id="answer">
+	<button id="confirm" onclick="Test()">confirm</button>
+</template>
+
+
+<!---->
+
+
+

@@ -1,0 +1,111 @@
+/* CSS declarations go here */
+
+.clickChangesPage{
+height:50%;
+width:100%;
+padding:50px;
+font-size:200%;
+font-family:sans-serif;
+color: gray;
+ margin: auto;
+
+}
+.chatrooms{
+height:8.33%;
+width:200px;
+}
+.coolstuff{
+background-color: #993399;
+right:50%;
+width:100%;
+}
+#confirm{
+height:50px;
+width:50px;
+}
+#answer{
+font-size:30px;
+color:black;
+}
+#q{
+font:sans-serif1
+font-size:30px;
+}
+.smallbutton{
+height:10%;
+width:20%;
+font-size:100%;
+font-family:sans-serif;
+color: gray;
+}
+#body{
+height:1000px;
+background-color:purple;
+}
+#Chatbox{
+height: 800px;
+width: 100%;
+position:fixed;
+}
+#ChatsShown{
+width: 20%;
+height: 80%;
+background-color:#660066;
+position:relative;
+float:left;
+}
+.text-section{
+float:right;
+position:relative;
+height:80%;
+width:80%;
+background-color:#330033;
+}
+.text{
+background-color: #b300b3;
+float:center;
+font-size:24px;
+font-family: serif;
+margin: 0 0 0px;
+color:white;
+}
+
+#ChatInput{
+position:relative;
+background-color: #ff99ff;
+height: 55%;
+width: 100%;
+}
+#q{
+
+}
+#answer{
+
+}
+#AnimeTask{
+}
+#CartoonTask{
+}
+#FPSTask{
+}
+#RTSTask{
+}
+#BGTask{
+}
+#GDTask{
+}
+#MOBATask{
+}
+#FightTask{
+}
+#DrawTask{
+}
+#SportsTask{
+}
+#LitTask{
+}
+#HikeTask{
+}
+.HiddenTask{
+display: none;
+}
