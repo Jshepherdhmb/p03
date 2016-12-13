@@ -5,161 +5,162 @@
 
   <title>Bubbles</title>
 <script>
-var QuestionArray = ["Do you like to go outside?", "Do you prefer western culture or eastern culture or both?", "Do you prefer games or videos or both?", "Do you prefer First Person Shooters, RTSes, Multiplater Online Battle Arenas, Figthing Games, Board Games, or Developing Games?", "Do you like to Draw?", "Do you like to read?"];
-var Database;
- function Name_Data(data){
-Database = data;
-console.log(data);
-} 
-function Insert_Data(){
-Database.insert({text: document.getElementById('ChatInput').value});
- document.getElementById('ChatInput').value = '';
-}
+		var i = 0;
+		var QuestionArray = ["Do you like to go outside?", "Do you prefer western culture or eastern culture or both?", "Do you prefer games or videos or both?", "Do you prefer First Person Shooters, RTSes, Multiplater Online Battle Arenas, Figthing Games, Board Games, or Developing Games?", "Do you like to Draw?", "Do you like to read?"];
+		var Database;
+ 	function Name_Data(data){
+		Database = data;
+		console.log(data);
+	} 
+	function Insert_Data(){
+		Database.insert({text: document.getElementById('ChatInput').value});
+ 		document.getElementById('ChatInput').value = '';
+	}
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	function setCookie(cname, cvalue, exdays) {
+    		var d = new Date();
+   		 d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    		var expires = "expires="+d.toUTCString();
+   		 document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-var i = 0;
-function Test(){
+	function getCookie(cname) {
+    		var name = cname + "=";
+   		 var ca = document.cookie.split(';');
+   		 for(var i = 0; i < ca.length; i++) {
+      		  var c = ca[i];
+       			 while (c.charAt(0) == ' ') {
+         		   c = c.substring(1);
+       			 }
+       		 if (c.indexOf(name) == 0) {
+        	    return c.substring(name.length, c.length);
+      		  }
+   		 }
+   	 return "";
+	}
+
+	function Test(){
 	
-	var qsAnswered;
-	console.log(i);
-	console.log("a");
-    qsAnswered = getCookie('qsAnswered');
-console.log(qsAnswered);
-		if (typeof qsAnswered == 'undefined'){
-			console.log("works");
-			setCookie("qsAnswered", '0', 14);
-			document.getElementById("q").value = QuestionArrayqs[Answered + 1];
-		}
-		else {
-			if(qsAnswered >= QuestionArray.length){
-				document.getElementById("q").innerHTML = "Thank you for taking the test!";
-				console.log("Here are your answers:");
-for(var a = 0; a <=6; a++){
-  var finalansws = getCookie('Answer' + a);
-	console.log(finalansws);
-}
+		var qsAnswered;
+		console.log(i);
+		console.log("a");
+   		 qsAnswered = getCookie('qsAnswered');
+		 console.log(qsAnswered);
+			if (typeof qsAnswered == 'undefined'){
+				console.log("works");
+				setCookie("qsAnswered", '0', 14);
+				document.getElementById("q").value = QuestionArrayqs[Answered + 1];
+			}
+			else {
+				if(qsAnswered >= QuestionArray.length){
+					document.getElementById("q").innerHTML = "Thank you for taking the test!";
+					console.log("Here are your answers:");
+				for(var a = 0; a <=6; a++){
+ 					 var finalansws = getCookie('Answer' + a);
+			 		console.log(finalansws);
+				}
 				
 			}
 			else{
-			console.log("b");
+				console.log("b");
 				document.getElementById('q').value = "";
 				setCookie('Answer' + i, document.getElementById('answer'),14);
-	i++;
+				i++;
 				setCookie('qsAnswered',i,14);
 				document.getElementById("q").innerHTML = QuestionArray[qsAnswered];
 			
 			}
 		      }
- 		}
+ 	}
 
 
-function Toggle_Data(id){
-if(id == 'l'){
-var dataBase = document.querySelector("#LitTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'A'){
-var dataBase = document.querySelector("#AnimeTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'C'){
-var dataBase = document.querySelector("#CartoonTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'F'){
-var dataBase = document.querySelector("#FPSTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'R'){
-var dataBase = document.querySelector("#RTSTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'B'){
-var dataBase = document.querySelector("#BGTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'G'){
-var dataBase = document.querySelector("#GDTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'M'){
-var dataBase = document.querySelector("#MOBATask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'Fi'){
-var dataBase = document.querySelector("#FightTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'Dr'){
-var dataBase = document.querySelector("#DrawTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'S'){
-var dataBase = document.querySelector("#SportsTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-if(id == 'H'){
-var dataBase = document.querySelector("#HikeTask");
-if(dataBase.classList.contains("HiddenTask"))
-dataBase.classList.remove("HiddenTask");
-else
-dataBase.classList.add("HiddenTask");
-}
-}
+	function Toggle_Data(id){
+		if(id == 'l'){
+				var dataBase = document.querySelector("#LitTask");
+			if(dataBase.classList.contains("HiddenTask"))
+				dataBase.classList.remove("HiddenTask");
+			else
+				dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'A'){
+				var dataBase = document.querySelector("#AnimeTask");
+			if(dataBase.classList.contains("HiddenTask"))
+				dataBase.classList.remove("HiddenTask");
+			else
+				dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'C'){
+				var dataBase = document.querySelector("#CartoonTask");
+			if(dataBase.classList.contains("HiddenTask"))
+				dataBase.classList.remove("HiddenTask");
+			else
+				dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'F'){
+				var dataBase = document.querySelector("#FPSTask");
+			if(dataBase.classList.contains("HiddenTask"))
+				dataBase.classList.remove("HiddenTask");
+			else
+				dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'R'){
+				var dataBase = document.querySelector("#RTSTask");
+			if(dataBase.classList.contains("HiddenTask"))
+				dataBase.classList.remove("HiddenTask");
+			else
+				dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'B'){
+			var dataBase = document.querySelector("#BGTask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'G'){
+			var dataBase = document.querySelector("#GDTask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'M'){
+			var dataBase = document.querySelector("#MOBATask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'Fi'){
+			var dataBase = document.querySelector("#FightTask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'Dr'){
+			var dataBase = document.querySelector("#DrawTask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'S'){
+			var dataBase = document.querySelector("#SportsTask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+		if(id == 'H'){
+			var dataBase = document.querySelector("#HikeTask");
+			if(dataBase.classList.contains("HiddenTask"))
+			dataBase.classList.remove("HiddenTask");
+			else
+			dataBase.classList.add("HiddenTask");
+		}
+	}
 
 
 </script>
@@ -173,7 +174,6 @@ dataBase.classList.add("HiddenTask");
 	<li><button class="clickChangesPage" data-page='login'>logout</button></li> 
         <li><button class="clickChangesPage" data-page='Test1'>Take the Test!</button></li>
         <li><button class="clickChangesPage" data-page='Chats'>Chats</button></li>
-        <li><button class="clickChangesPage" data-page='database'>Database</button></li>
 
 {{else}}
     {{> Template.dynamic template=currentPage}}  
